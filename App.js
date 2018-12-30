@@ -1,8 +1,9 @@
 import React from 'react';
-import { createAppContainer } from 'react-navigation';
-import AppDrawerNavigator from './components/navigator/drawer/AppDrawerNavigator';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import StackNavigator from './components/navigator/StackNavigator';
 
-const AppContainer = createAppContainer(AppDrawerNavigator);
+
+const AppContainer = createAppContainer(StackNavigator);
 
 export default class App extends React.Component {
     render() {
