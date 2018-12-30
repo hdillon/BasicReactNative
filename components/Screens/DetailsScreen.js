@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Button, Container, Content} from "native-base";
-import {Text} from "react-native";
+import {Button, Container, Content} from 'native-base';
+import {Text} from 'react-native';
 import HeaderMenu from '../HeaderMenu';
 
 

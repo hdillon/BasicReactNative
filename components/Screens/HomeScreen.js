@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Text } from 'react-native';
-import {Container, Content} from "native-base";
+import {Container, Content} from 'native-base';
 import HeaderMenu from '../HeaderMenu';
 
 class HomeScreen extends Component {

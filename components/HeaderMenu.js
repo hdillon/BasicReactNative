@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text} from 'react-native';
-import {Body, Header, Icon, Left, Right} from "native-base";
+import {Body, Header, Icon, Left, Right} from 'native-base';
 
 const HeaderMenu = (props) => (
     <Header style={styles.header}>
