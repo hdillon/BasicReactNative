@@ -34,7 +34,7 @@ const DrawerContent = (props) => (
             </TouchableOpacity>
         </Content>
     </Container>
-)
+);
 
 const styles = StyleSheet.create({
     drawerImage:{

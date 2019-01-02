@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Text } from 'react-native';
 import {Container, Content} from 'native-base';
-import HeaderMenu from '../HeaderMenu';
+import MenuHeader from '../MenuHeader';
 
 class HomeScreen extends Component {
     static navigationOptions = {
@@ -11,7 +11,7 @@ class HomeScreen extends Component {
     render() {
         return (
             <Container>
-                <HeaderMenu
+                <MenuHeader
                     navigation={this.props.navigation}
                 />
                 <Content contentContainerStyle={{

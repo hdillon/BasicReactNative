@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Container, Content} from 'native-base';
 import {Text} from 'react-native';
-import HeaderMenu from '../HeaderMenu';
+import ArrowHeader from '../ArrowHeader';
 
 
 class DetailsScreen extends Component {
@@ -12,7 +12,7 @@ class DetailsScreen extends Component {
     render() {
         return (
             <Container>
-                <HeaderMenu
+                <ArrowHeader
                     navigation={this.props.navigation}
                 />
                 <Content contentContainerStyle={{

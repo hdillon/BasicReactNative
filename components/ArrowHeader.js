@@ -2,18 +2,18 @@ import React from 'react';
 import {StyleSheet, Text} from 'react-native';
 import {Body, Header, Icon, Left, Right} from 'native-base';
 
-const HeaderMenu = (props) => (
+const ArrowHeader = (props) => (
     <Header style={styles.header}>
-        <Left/>
+        <Left>
+            <Icon name={'arrow-back'} onPress={
+                () => props.navigation.goBack()} style={styles.menu}/>
+        </Left>
         <Body>
-        <Text>Details</Text>
+        <Text style={styles.menu}>{props.navigation.state.routeName}</Text>
         </Body>
-        <Right>
-            <Icon name={'menu'} onPress={
-                () => props.navigation.openDrawer()} style={styles.menu}/>
-        </Right>
+        <Right/>
     </Header>
-)
+);
 
 const styles = StyleSheet.create({
     icon: {
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default HeaderMenu;
+export default ArrowHeader;
