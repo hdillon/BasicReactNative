@@ -7,7 +7,7 @@ class AuthScreen extends Component {
 
         this.state = {
             username: '',
-            password: '',
+            password: ''
         };
     }
 
@@ -19,55 +19,71 @@ class AuthScreen extends Component {
     }
 
     render() {
+        const { isFocused } = this.state;
+        const { onBlur, onFocus, ...otherProps } = this.props;
         return (
             <View style={styles.container}>
+                <View style={{ flex: 3 }} />
+                <View style={{flex: 1}}>
                 <TextInput
                     value={this.state.username}
                     onChangeText={(username) => this.setState({ username })}
                     placeholder={'Username'}
+                    selectionColor={BLUE}
+                    underlineColorAndroid={BLUE}
                     style={styles.input}
+                    {...otherProps}
                 />
+                </View>
+                <View style={{flex: 1}}>
                 <TextInput
                     value={this.state.password}
                     onChangeText={(password) => this.setState({ password })}
                     placeholder={'Password'}
+                    selectionColor={BLUE}
+                    underlineColorAndroid={BLUE}
                     secureTextEntry={true}
                     style={styles.input}
+                    {...otherProps}
                 />
-
+                </View>
+                <View style={{ flex: 1 }} />
                 <TouchableOpacity
                     style={styles.button}
                     onPress={ this.onLogin }
                     activeOpacity={3}
                 >
-                    <Text style={{margin: 5 ,fontWeight: 'bold',color: '#ffff00'}}>LOG IN</Text>
+                    <Text style={{fontWeight: 'bold',color: '#ffffff'}}>LOGIN</Text>
                 </TouchableOpacity>
+                <View style={{ flex: 1 }} />
             </View>
         );
     }
 }
 
+const BLUE = '#428AF8';
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        justifyContent: 'space-between',
         alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#ecf0f1',
+        backgroundColor: '#ffffff',
     },
     input: {
-        width: 200,
-        height: 44,
-        padding: 10,
-        borderWidth: 1,
-        borderColor: 'black',
-        marginBottom: 10,
+        width: 300,
+        height: 45,
+        paddingLeft: 6,
+        fontSize: 20
     },
     button: {
-        width: 200,
+        width: 300,
         height: 44,
         alignItems: 'center',
-        backgroundColor: '#000051',
-        padding: 5
+        backgroundColor: '#ff3d00',
+        borderRadius: 25,
+        margin: 2,
+        justifyContent: 'center'
     }
 });
 
