@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "194179294422",
+    "firebase_url": "https://basicreactnative.firebaseio.com",
+    "project_id": "basicreactnative",
+    "storage_bucket": "basicreactnative.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194179294422:android:4d3eecbd22b5eff9",
+        "android_client_info": {
+          "package_name": "com.myreactnativeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194179294422-i1rq1u09obag0lp3avi3v3eba0mj2j7d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myreactnativeapp",
+            "certificate_hash": "72b814bea48530ffcb1228dc3985c07905b51527"
+          }
+        },
+        {
+          "client_id": "194179294422-episikoih6931su44ngdjtvajdau8ier.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWIJBvkDTtGfHnwDSfHz5QYJgv7NIr7Xg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194179294422-episikoih6931su44ngdjtvajdau8ier.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
