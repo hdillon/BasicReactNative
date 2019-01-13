@@ -1,0 +1,13 @@
+{
+    "extends": "rallycoding",
+    "rules": {
+        "no-useless-concat": "off",
+        "prefer-template": "off",
+        "max-len": "off",
+        "no-else-return": "off",
+        "no-param-reassign": "off",
+        "no-unneeded-ternary": "warn",
+        "camelcase": "warn",
+        "padded-blocks": "off"
+    }
+}
