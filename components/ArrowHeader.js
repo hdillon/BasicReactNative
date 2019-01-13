@@ -1,17 +1,19 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
-import {Body, Header, Icon, Left, Right} from 'native-base';
+import { StyleSheet, Text } from 'react-native';
+import { Body, Header, Icon, Left, Right } from 'native-base';
 
 const ArrowHeader = (props) => (
     <Header style={styles.header}>
         <Left>
-            <Icon name={'arrow-back'} onPress={
-                () => props.navigation.goBack()} style={styles.menu}/>
+            <Icon 
+                name={'arrow-back'} 
+                onPress={() => props.navigation.goBack()} style={styles.menu}
+            />
         </Left>
         <Body>
         <Text style={styles.menu}>{props.navigation.state.routeName}</Text>
         </Body>
-        <Right/>
+        <Right />
     </Header>
 );
 

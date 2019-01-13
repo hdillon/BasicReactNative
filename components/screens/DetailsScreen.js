@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {Button, Container, Content} from 'native-base';
-import {Text} from 'react-native';
+import { Container, Content } from 'native-base';
+import { Text } from 'react-native';
 import ArrowHeader from '../ArrowHeader';
 
 
 class DetailsScreen extends Component {
     static navigationOptions = {
-        //drawerLabel: 'Details'
+        drawerLabel: 'Details'
     };
 
     render() {
@@ -15,11 +15,13 @@ class DetailsScreen extends Component {
                 <ArrowHeader
                     navigation={this.props.navigation}
                 />
-                <Content contentContainerStyle={{
-                    flex: 1,
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}>
+                <Content 
+                    contentContainerStyle={{
+                        flex: 1,
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
+                >
                     <Text>Details Screen</Text>
                 </Content>
             </Container>

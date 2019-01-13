@@ -1,8 +1,8 @@
 import React from 'react';
-import {Body, Container, Content, Header, Button} from "native-base";
-import {Image, StyleSheet, Text, TouchableOpacity, Alert} from "react-native";
-import {DrawerItems} from "react-navigation";
-import * as Asyncstorage from "react-native";
+import { Body, Container, Content, Header } from 'native-base';
+import { Image, StyleSheet, Text, TouchableOpacity, Alert } from 'react-native';
+import { DrawerItems } from 'react-navigation';
+import * as Asyncstorage from 'react-native';
 
 const DrawerContent = (props) => (
     <Container>
@@ -16,21 +16,24 @@ const DrawerContent = (props) => (
         </Header>
         <Content>
             <DrawerItems {...props} />
-            <TouchableOpacity onPress={()=>
-                Alert.alert(
-                    'Log out',
-                    'Do you want to logout?',
-                    [
-                        {text: 'Cancel', onPress: () => {return null}},
-                        {text: 'Confirm', onPress: () => {
-                                //Asyncstorage.clear();
-                                props.navigation.navigate('AuthScreen')
-                            }},
-                    ],
-                    { cancelable: false }
-                )
-            }>
-                <Text style={{margin: 16,fontWeight: 'bold',color: 'red'}}>Log out</Text>
+            <TouchableOpacity 
+                onPress={() =>
+                    Alert.alert(
+                        'Log out',
+                        'Do you want to logout?',
+                        [
+                            { text: 'Cancel', onPress: () => null },
+                            { text: 'Confirm',
+                                    onPress: () => {
+                                    //Asyncstorage.clear();
+                                    props.navigation.navigate('AuthScreen');
+                                } },
+                        ],
+                        { cancelable: false }
+                    )
+                }
+            >
+                <Text style={{ margin: 16,fontWeight: 'bold',color: 'red' }}>Log out</Text>
             </TouchableOpacity>
         </Content>
     </Container>

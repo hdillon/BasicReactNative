@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Alert, TextInput, View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import React, { Component } from 'react';
+import { Alert, TextInput, View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import firebase from 'react-native-firebase';
 
 class AuthScreen extends Component {
@@ -22,9 +22,7 @@ class AuthScreen extends Component {
 
     onLogin = () => {
         const { email, password } = this.state;
-        if(email === '' || password === '')
-            Alert.alert('Ivalid user or pass');
-        else{
+        if (email === '' || password === '') { Alert.alert('Ivalid user or pass'); } else {
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then((user) => {
                     console.info('LOGIN OK', `${user}`);
@@ -54,12 +52,11 @@ class AuthScreen extends Component {
     };
 
     render() {
-        const { isFocused } = this.state;
-        const { onBlur, onFocus, ...otherProps } = this.props;
+        const { ...otherProps } = this.props;
         return (
             <View style={styles.container}>
                 <View style={{ flex: 3 }} />
-                <View style={{flex: 1}}>
+                <View style={{ flex: 1 }}>
                 <TextInput
                     value={this.state.email}
                     onChangeText={(email) => this.setState({ email })}
@@ -70,14 +67,14 @@ class AuthScreen extends Component {
                     {...otherProps}
                 />
                 </View>
-                <View style={{flex: 1}}>
+                <View style={{ flex: 1 }}>
                 <TextInput
                     value={this.state.password}
                     onChangeText={(password) => this.setState({ password })}
                     placeholder={'Password'}
                     selectionColor={BLUE}
                     underlineColorAndroid={BLUE}
-                    secureTextEntry={true}
+                    secureTextEntry
                     style={styles.input}
                     {...otherProps}
                 />
@@ -85,10 +82,10 @@ class AuthScreen extends Component {
                 <View style={{ flex: 1 }} />
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={ this.onLogin }
+                    onPress={this.onLogin}
                     activeOpacity={3}
                 >
-                    <Text style={{fontWeight: 'bold',color: '#ffffff'}}>LOGIN</Text>
+                    <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>LOGIN</Text>
                 </TouchableOpacity>
                 <View style={{ flex: 1 }} />
             </View>

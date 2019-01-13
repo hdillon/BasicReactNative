@@ -1,17 +1,19 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
-import {Body, Header, Icon, Left, Right} from 'native-base';
+import { StyleSheet, Text } from 'react-native';
+import { Body, Header, Icon, Left, Right } from 'native-base';
 
 const MenuHeader = (props) => (
     <Header style={styles.header}>
         <Left>
-            <Icon name={'menu'} onPress={
-                () => props.navigation.openDrawer()} style={styles.menu}/>
+            <Icon 
+                name={'menu'} 
+                onPress={() => props.navigation.openDrawer()} style={styles.menu}
+            />
         </Left>
         <Body>
             <Text style={styles.menu}>{props.navigation.state.routeName}</Text>
         </Body>
-        <Right/>
+        <Right />
     </Header>
 );
 
