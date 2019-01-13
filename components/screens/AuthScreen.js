@@ -1,22 +1,57 @@
 import React, {Component} from 'react';
-import {Alert, Button, TextInput, View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {Alert, TextInput, View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import firebase from 'react-native-firebase';
 
 class AuthScreen extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            username: '',
+            email: '',
             password: ''
         };
     }
 
-    onLogin= () => {
-        const { username, password } = this.state;
-        //TODO: Validate credentials before navigate to home view
-        Alert.alert('Welcome', `${username}`);
-        this.props.navigation.navigate('DrawerNavigator');
+    async componentDidMount() {
+        // TODO: You: Do firebase things
+        // const { user } = await firebase.auth().signInAnonymously();
+        // console.warn('User -> ', user.toJSON());
+
+        // await firebase.analytics().logEvent('foo', { bar: '123'});
     }
+
+    onLogin = () => {
+        const { email, password } = this.state;
+        if(email === '' || password === '')
+            Alert.alert('Ivalid user or pass');
+        else{
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((user) => {
+                    console.info('LOGIN OK', `${user}`);
+                    this.props.navigation.navigate('DrawerNavigator');
+                })
+                .catch((error) => {
+                    const { code, message } = error;
+                    console.info('LOGIN ERROR', `${code}`);
+                    console.info('MESSAGE', `${message}`);
+                    Alert.alert('Ivalid user or pass');
+                });
+        }
+    };
+
+    onRegister = () => {
+        const { email, password } = this.state;
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((user) => {
+                //Do anything with the user
+            })
+            .catch((error) => {
+                const { code, message } = error;
+                console.info('REGISTER ERROR', `${code}`);
+                console.info('MESSAGE', `${message}`);
+                Alert.alert('Sign up failed');
+            });
+    };
 
     render() {
         const { isFocused } = this.state;
@@ -26,9 +61,9 @@ class AuthScreen extends Component {
                 <View style={{ flex: 3 }} />
                 <View style={{flex: 1}}>
                 <TextInput
-                    value={this.state.username}
-                    onChangeText={(username) => this.setState({ username })}
-                    placeholder={'Username'}
+                    value={this.state.email}
+                    onChangeText={(email) => this.setState({ email })}
+                    placeholder={'Email'}
                     selectionColor={BLUE}
                     underlineColorAndroid={BLUE}
                     style={styles.input}
